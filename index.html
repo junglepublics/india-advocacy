@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Berlin Action Guide: India</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A step-by-step guide for people in Berlin who want German and European institutions to respond to the crackdown on peaceful protest in India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column with a sticky step rail; tools (letter builder, checklists) sit inline where the reader needs them.
+   Accent = the violet of indelible election ink, the mark on a voter's finger. */
+:root {
+  --bg: #f7f6fa;
+  --surface: #ffffff;
+  --sunk: #efedf5;
+  --fg: #1d1a26;
+  --muted: #5d5870;
+  --line: #dcd8e6;
+  --ink: #5b2bb5;
+  --ink-soft: #ece4fb;
+  --ink-fg: #ffffff;
+  --warn: #8a4b00;
+  --warn-soft: #fdf0dc;
+  --ok: #1d6b45;
+  --ok-soft: #e1f3e9;
+  --f-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Public Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15131b; --surface: #1d1a25; --sunk: #24202f; --fg: #ebe8f2; --muted: #a49eb6; --line: #353046;
+    --ink: #b597ff; --ink-soft: #2e2346; --ink-fg: #15131b;
+    --warn: #f3b765; --warn-soft: #33260f; --ok: #7fd3a6; --ok-soft: #14301f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15131b; --surface: #1d1a25; --sunk: #24202f; --fg: #ebe8f2; --muted: #a49eb6; --line: #353046;
+  --ink: #b597ff; --ink-soft: #2e2346; --ink-fg: #15131b;
+  --warn: #f3b765; --warn-soft: #33260f; --ok: #7fd3a6; --ok-soft: #14301f;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--f-body); font-size: 1.0625rem; line-height: 1.6;
+  margin: 0;
+}
+a { color: var(--ink); text-underline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 4px; }
+.wrap {
+  max-width: 1120px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--f-display); line-height: 1.15; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2rem, 5.2vw, 3.4rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; letter-spacing: -0.01em; }
+h3 { font-size: 1.2rem; font-weight: 700; }
+p { margin: 0; }
+.eyebrow { font-family: var(--f-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.muted { color: var(--muted); }
+.mono { font-family: var(--f-mono); font-size: 0.9em; }
+
+/* Header */
+header.hero { padding-block: 48px 32px; border-bottom: 1px solid var(--line); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 40px; align-items: end; }
+.hero .lede { font-size: 1.2rem; max-width: 60ch; margin-top: 16px; }
+.hero .stamp { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px 16px; font-family: var(--f-mono); font-size: 0.82rem; color: var(--muted); }
+.inkmark { display: inline-block; width: 0.55em; height: 0.9em; border-radius: 0.3em 0.3em 0.25em 0.25em; background: var(--ink); vertical-align: -0.05em; margin-right: 0.15em; }
+.quick { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 12px; }
+.quick ol { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; font-size: 0.98rem; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font: 600 0.95rem/1 var(--f-body); padding: 12px 16px; border-radius: 10px;
+  border: 1px solid var(--ink); background: var(--ink); color: var(--ink-fg); cursor: pointer; text-decoration: none;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn.ghost { background: transparent; color: var(--ink); }
+.btn.small { padding: 8px 12px; font-size: 0.85rem; }
+.btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+
+/* Layout */
+.layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; padding-block: 32px 80px; }
+nav.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 20px); align-self: start; }
+nav.rail ol { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 2px; counter-reset: step; }
+nav.rail a {
+  display: grid; grid-template-columns: 28px 1fr; gap: 8px; align-items: center;
+  padding: 8px 10px; border-radius: 8px; color: var(--muted); text-decoration: none; font-size: 0.95rem;
+}
+nav.rail a .n { font-family: var(--f-mono); font-size: 0.78rem; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line); }
+nav.rail a.active { background: var(--ink-soft); color: var(--fg); }
+nav.rail a.active .n { background: var(--ink); color: var(--ink-fg); border-color: var(--ink); }
+nav.rail a.done .n { background: var(--ok-soft); color: var(--ok); border-color: var(--ok); }
+.progress { margin-top: 16px; font-size: 0.85rem; color: var(--muted); }
+.bar { height: 6px; background: var(--sunk); border-radius: 3px; overflow: hidden; margin-top: 6px; }
+.bar > i { display: block; height: 100%; background: var(--ink); width: 0; transition: width .3s; }
+
+main { min-width: 0; display: grid; gap: 64px; }
+section.step { display: grid; gap: 20px; scroll-margin-top: 24px; }
+.step-head { display: grid; gap: 6px; }
+.step-head .eyebrow b { color: var(--ink); font-weight: 500; }
+.prose { display: grid; gap: 14px; max-width: 68ch; }
+
+.callout { border-radius: 12px; padding: 16px 18px; display: grid; gap: 6px; max-width: 72ch; }
+.callout.key { background: var(--ink-soft); }
+.callout.warn { background: var(--warn-soft); }
+.callout.warn strong { color: var(--warn); }
+
+.timeline { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; border-left: 2px solid var(--line); margin-left: 6px; }
+.timeline li { position: relative; padding: 0 0 16px 22px; }
+.timeline li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--ink); }
+.timeline li.now::before { background: var(--ink); }
+.timeline time { font-family: var(--f-mono); font-size: 0.82rem; color: var(--muted); display: block; }
+
+/* Rules */
+.rules { display: grid; gap: 10px; max-width: 76ch; }
+details.rule { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+details.rule summary { cursor: pointer; padding: 14px 16px; font-weight: 600; list-style: none; display: flex; gap: 12px; align-items: baseline; }
+details.rule summary::-webkit-details-marker { display: none; }
+details.rule summary::after { content: "+"; margin-left: auto; font-family: var(--f-mono); color: var(--muted); }
+details.rule[open] summary::after { content: "−"; }
+details.rule .body { padding: 0 16px 16px; color: var(--fg); }
+.tag { font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; background: var(--sunk); color: var(--muted); white-space: nowrap; }
+.tag.do { background: var(--ok-soft); color: var(--ok); }
+.tag.dont { background: var(--warn-soft); color: var(--warn); }
+
+/* Targets */
+.targets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.target { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; gap: 10px; align-content: start; }
+.target .lev { display: flex; gap: 4px; }
+.target .lev i { width: 18px; height: 6px; border-radius: 3px; background: var(--sunk); }
+.target .lev i.on { background: var(--ink); }
+.target ul { margin: 0; padding-left: 1.1em; display: grid; gap: 8px; font-size: 0.95rem; }
+.target .ask { font-size: 0.9rem; border-top: 1px dashed var(--line); padding-top: 10px; }
+
+/* Builder */
+.builder { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 20px; align-items: start; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 16px; }
+.seg { display: grid; grid-template-columns: 1fr 1fr; background: var(--sunk); border-radius: 10px; padding: 4px; gap: 4px; }
+.seg button { font: 600 0.92rem/1.2 var(--f-body); border: 0; border-radius: 8px; padding: 10px 8px; background: transparent; color: var(--muted); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--fg); box-shadow: 0 1px 2px rgba(0,0,0,.12); }
+.field { display: grid; gap: 6px; }
+.field label, .field .lbl { font-size: 0.85rem; font-weight: 600; }
+.field .hint { font-size: 0.8rem; color: var(--muted); }
+input[type="text"], input[type="email"], textarea, select {
+  font: inherit; font-size: 0.98rem; color: var(--fg); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; width: 100%;
+}
+textarea { min-height: 90px; resize: vertical; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.checks { display: grid; gap: 8px; }
+.check { display: grid; grid-template-columns: 22px 1fr; gap: 8px; align-items: start; font-size: 0.93rem; cursor: pointer; }
+.check input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--ink); }
+.letter {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+  position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px);
+}
+.letter .bar-top { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 12px 14px; border-bottom: 1px solid var(--line); background: var(--sunk); }
+.letter .bar-top .eyebrow { margin-right: auto; }
+.letter pre {
+  margin: 0; padding: 20px; white-space: pre-wrap; word-wrap: break-word;
+  font-family: var(--f-body); font-size: 0.95rem; line-height: 1.6; max-height: 70vh; overflow: auto;
+}
+.letter pre mark { background: var(--warn-soft); color: var(--warn); border-radius: 3px; padding: 0 2px; }
+.toast { font-size: 0.85rem; color: var(--ok); min-height: 1.2em; }
+
+/* Question cards */
+.qtabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.qtabs button { font: 600 0.9rem/1 var(--f-body); padding: 10px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); cursor: pointer; }
+.qtabs button[aria-selected="true"] { background: var(--ink); border-color: var(--ink); color: var(--ink-fg); }
+.qlist { display: grid; gap: 12px; }
+.q { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 16px; align-items: start; }
+.q .num { font-family: var(--f-mono); font-size: 0.78rem; color: var(--muted); }
+.q p[lang] { font-size: 0.98rem; }
+.q .gloss { font-size: 0.85rem; color: var(--muted); margin-top: 6px; }
+.wordcount { font-family: var(--f-mono); font-size: 0.8rem; color: var(--muted); }
+
+/* Briefing */
+.brief { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.brief li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 12px; padding: 14px 18px; border-top: 1px solid var(--line); }
+.brief li:first-child { border-top: 0; }
+.brief .n { font-family: var(--f-mono); color: var(--ink); font-weight: 500; }
+.brief .de { font-weight: 600; }
+.brief .en { font-size: 0.88rem; color: var(--muted); }
+
+/* Follow-up / coalition */
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; gap: 10px; align-content: start; }
+.card ul { margin: 0; padding-left: 1.1em; display: grid; gap: 8px; font-size: 0.95rem; }
+.datebox { font-family: var(--f-mono); font-size: 1.3rem; color: var(--ink); }
+
+.checklist { display: grid; gap: 8px; max-width: 70ch; }
+.checklist label { display: grid; grid-template-columns: 24px 1fr; gap: 10px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; cursor: pointer; }
+.checklist input { width: 20px; height: 20px; accent-color: var(--ink); }
+.checklist label:has(input:checked) { background: var(--ok-soft); border-color: transparent; }
+.checklist label:has(input:checked) span { text-decoration: line-through; color: var(--muted); }
+.ready { font-weight: 600; color: var(--ok); }
+
+.sources { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; max-width: 80ch; }
+.sources li { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 12px; font-size: 0.95rem; }
+.sources time { font-family: var(--f-mono); font-size: 0.8rem; color: var(--muted); padding-top: 3px; }
+.sources a { overflow-wrap: anywhere; }
+
+footer { border-top: 1px solid var(--line); padding-block: 24px 40px; color: var(--muted); font-size: 0.88rem; }
+
+@media (max-width: 960px) {
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  nav.rail { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 8px; border-bottom: 1px solid var(--line); }
+  nav.rail .eyebrow, nav.rail .progress { display: none; }
+  nav.rail ol { margin: 0; grid-auto-flow: column; grid-auto-columns: max-content; overflow-x: auto; scrollbar-width: none; }
+  nav.rail a { grid-template-columns: 24px auto; padding: 6px 10px; }
+  .builder { grid-template-columns: minmax(0, 1fr); }
+  .letter { position: static; }
+  .targets { grid-template-columns: minmax(0, 1fr); }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+}
+@media (max-width: 600px) {
+  .grid2, .row2 { grid-template-columns: minmax(0, 1fr); }
+  .q { grid-template-columns: minmax(0, 1fr); }
+  .sources li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  header.hero { padding-block: 32px 24px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+html { scroll-behavior: smooth; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow"><span class="inkmark" aria-hidden="true"></span> Action guide · Berlin</p>
+      <h1>Advocacy from Berlin on India’s voter roll crisis</h1>
+      <p class="lede">For people living in Berlin who want German and European institutions to respond to the crackdown on peaceful protest in India. Work through six steps, build a letter in minutes, and send it with a sourced briefing.</p>
+      <p class="stamp"><span>Updated 14 October 2026</span><span>Facts move quickly. Check the sources before you send.</span></p>
+    </div>
+    <aside class="quick" aria-label="Short version">
+      <p class="eyebrow">Got 15 minutes?</p>
+      <ol>
+        <li>Find your MdB or an MEP on INTA or DROI.</li>
+        <li>Build your letter below and copy it.</li>
+        <li>Attach the questions and the briefing.</li>
+        <li>Put a follow-up in your calendar.</li>
+      </ol>
+      <a class="btn" href="#write">Start writing my letter</a>
+    </aside>
+  </div>
+</header>
+
+<div class="wrap layout">
+  <nav class="rail" aria-label="Steps">
+    <p class="eyebrow">Your path</p>
+    <ol id="railList">
+      <li><a href="#understand"><span class="n">1</span>Understand</a></li>
+      <li><a href="#rules"><span class="n">2</span>Ground rules</a></li>
+      <li><a href="#who"><span class="n">3</span>Who to contact</a></li>
+      <li><a href="#write"><span class="n">4</span>Write your letter</a></li>
+      <li><a href="#questions"><span class="n">5</span>Questions &amp; briefing</a></li>
+      <li><a href="#send"><span class="n">6</span>Send &amp; follow up</a></li>
+    </ol>
+    <div class="progress">
+      <span id="progressText">Pre-send checklist: 0 of 5</span>
+      <div class="bar"><i id="progressBar"></i></div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- 1 -->
+    <section class="step" id="understand">
+      <div class="step-head">
+        <p class="eyebrow"><b>Step 1</b> · 3 min read</p>
+        <h2>What is happening, and why Berlin matters now</h2>
+      </div>
+      <div class="prose">
+        <p>Since mid-2025 India’s Election Commission has run a <strong>Special Intensive Revision (SIR)</strong> of the voter rolls, first in Bihar and then nationwide. Critics report that around <strong>130 million names</strong> have been removed. The Election Commission says the exercise corrects inaccurate rolls. The ruling BJP denies any manipulation.</p>
+        <p>The youth-led Cockroach Janta Party (CJP) began in May 2026, after a remark by the Chief Justice comparing unemployed young people to cockroaches. With students and opposition parties, it now demands the resignation of Chief Election Commissioner Gyanesh Kumar.</p>
+        <p>The state response in October 2026 has been severe. Authorities closed 57 metro stations in Delhi, cancelled trains and suspended mobile internet around the protest area. Thousands of people were detained over the weekend of 10 and 11 October. The movement’s three leaders were stopped on arrival at Delhi airport and later released on condition of “no breach of peace for one year”.</p>
+      </div>
+      <div class="callout key">
+        <p class="eyebrow">Your strongest hook</p>
+        <p>On <strong>11 October 2026</strong> the Supreme Court of India issued an interim order that people assembling peacefully must not be illegally detained. It comes from India’s own highest court, so build every ask around it.</p>
+      </div>
+      <h3>The advocacy window</h3>
+      <ol class="timeline">
+        <li><time>Mid-2025</time>SIR of voter rolls begins in Bihar, then goes nationwide.</li>
+        <li><time>27 Jan 2026</time>EU and India conclude their free trade agreement.</li>
+        <li><time>May 2026</time>Cockroach Janta Party movement begins.</li>
+        <li><time>11 Sep 2026</time>European Commission sends the FTA to the Council for signature.</li>
+        <li><time>10–11 Oct 2026</time>Thousands detained in New Delhi. Supreme Court interim order on 11 October.</li>
+        <li class="now"><time>Next</time>Council signature, then European Parliament consent. This is when EU institutions pay the most attention to India.</li>
+      </ol>
+      <div class="callout">
+        <p class="eyebrow">Be realistic</p>
+        <p class="prose">Germany strongly supports the agreement, and it is very unlikely to be blocked over this issue. Aim for attention: questions on the record, statements alongside the signature, and human rights language in Parliament’s debate and resolutions.</p>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="step" id="rules">
+      <div class="step-head">
+        <p class="eyebrow"><b>Step 2</b> · Read before you write</p>
+        <h2>Five ground rules</h2>
+        <p class="muted">Tap each one for the reasoning.</p>
+      </div>
+      <div class="rules">
+        <details class="rule" open>
+          <summary><span class="tag do">Do</span> Anchor every ask in India’s own law</summary>
+          <div class="body">Cite Article 19(1)(b) of the Indian Constitution (the right to assemble peaceably), Article 326 (adult suffrage), the Supreme Court’s 11 October order, and India’s obligations under the International Covenant on Civil and Political Rights, which it ratified in 1979.</div>
+        </details>
+        <details class="rule">
+          <summary><span class="tag dont">Don’t</span> Ask European actors to call for a resignation</summary>
+          <div class="body">That is a decision for Indian citizens and Indian institutions. A foreign government making the demand hands the Indian government a ready-made “foreign interference” story.</div>
+        </details>
+        <details class="rule">
+          <summary><span class="tag do">Do</span> Talk to the movement first</summary>
+          <div class="body">In 2021 Indian police treated a protest “toolkit” shared by activists abroad as evidence of conspiracy, and a climate activist was arrested over it. Before scaling up any action, ask organisers in India whether international attention helps them right now, and in what form.</div>
+        </details>
+        <details class="rule">
+          <summary><span class="tag do">Do</span> Be specific</summary>
+          <div class="body">Policy staff act on numbers, dates and named court orders. Vague concern about “civil society” gets a polite form reply.</div>
+        </details>
+        <details class="rule">
+          <summary><span class="tag do">Do</span> Personalise every letter</summary>
+          <div class="body">Identical emails are logged as a campaign and given less weight than one considered letter. The builder in Step 4 gives you a starting point. Add a sentence in your own words.</div>
+        </details>
+      </div>
+      <div class="callout warn">
+        <p><strong>Indian nationals: weigh the personal risk first.</strong></p>
+        <p>Indian authorities have cancelled the Overseas Citizen of India (OCI) status of some critics living abroad, and passport and consular services can become harder to use. Families in India can also face pressure.</p>
+        <ul style="margin:0;padding-left:1.1em;display:grid;gap:4px">
+          <li>Decide individually whether to sign publicly. An organisation or coalition can front a letter instead.</li>
+          <li>Check with your employer if your role links you publicly to an organisation.</li>
+          <li>Coordinate on Signal. Do not keep lists of participants in openly shared documents.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="step" id="who">
+      <div class="step-head">
+        <p class="eyebrow"><b>Step 3</b> · Pick one target to start</p>
+        <h2>Who to contact, in order of leverage</h2>
+      </div>
+      <div class="targets">
+        <article class="target">
+          <div class="lev" aria-label="Leverage: high"><i class="on"></i><i class="on"></i><i class="on"></i></div>
+          <h3>European Parliament</h3>
+          <p class="muted" style="font-size:.9rem">Where the main decision sits.</p>
+          <ul>
+            <li><strong>INTA</strong> (Committee on International Trade), especially the rapporteur for the EU-India agreement. INTA prepares the consent recommendation.</li>
+            <li><strong>DROI</strong> (Subcommittee on Human Rights). Ask them to press for an urgency resolution if detentions continue. Precedent: Manipur, July 2023.</li>
+            <li>Delegation for relations with India.</li>
+            <li>MEPs who live or keep offices in Berlin. Germany elects MEPs from party lists, so there is no single “Berlin MEP”.</li>
+          </ul>
+          <p class="ask"><strong>Ask for one thing:</strong> raise the Supreme Court order in the consent debate, table a written question, or support an urgency resolution.</p>
+          <a class="btn ghost small" href="https://www.europarl.europa.eu/committees/en/inta/home/members" target="_blank" rel="noopener">Find INTA members ↗</a>
+          <a class="btn ghost small" href="https://www.europarl.europa.eu/committees/en/droi/home/members" target="_blank" rel="noopener">Find DROI members ↗</a>
+        </article>
+        <article class="target">
+          <div class="lev" aria-label="Leverage: medium"><i class="on"></i><i class="on"></i><i></i></div>
+          <h3>Bundestag</h3>
+          <p class="muted" style="font-size:.9rem">Your own MdB is the easiest door to open.</p>
+          <ul>
+            <li><strong>Your local MdB.</strong> Every MdB can submit up to four <em lang="de">schriftliche Fragen</em> a month. Send them ready-drafted questions. A finished question is easy to say yes to.</li>
+            <li>An individual MdB cannot file a <em lang="de">Kleine Anfrage</em>. That needs a parliamentary group or 5% of members. Ask them to take it to their group.</li>
+            <li>Members of the <span lang="de">Ausschuss für Menschenrechte und humanitäre Hilfe</span>, especially South Asia rapporteurs.</li>
+          </ul>
+          <p class="ask"><strong>Ask for:</strong> one or more of the written questions in Step 5.</p>
+          <a class="btn ghost small" href="https://www.bundestag.de/abgeordnete" target="_blank" rel="noopener">Find your MdB by postcode ↗</a>
+        </article>
+        <article class="target">
+          <div class="lev" aria-label="Leverage: medium"><i class="on"></i><i class="on"></i><i></i></div>
+          <h3>Federal Government</h3>
+          <p class="muted" style="font-size:.9rem">Auswärtiges Amt and Germany’s Council vote.</p>
+          <ul>
+            <li><strong>Commissioner for Human Rights Policy and Humanitarian Assistance</strong> at the Federal Foreign Office. Ask that freedom of assembly, internet shutdowns and detentions be raised with Indian counterparts and in the EU–India human rights dialogue.</li>
+            <li><strong>Germany’s Council vote.</strong> Germany will back signature. Ask that it come with a clear public statement on freedom of assembly and the right to vote.</li>
+          </ul>
+          <a class="btn ghost small" href="https://www.auswaertiges-amt.de/" target="_blank" rel="noopener">Auswärtiges Amt ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="step" id="write">
+      <div class="step-head">
+        <p class="eyebrow"><b>Step 4</b> · 5 minutes</p>
+        <h2>Build your letter</h2>
+        <p class="muted">Fill in the fields and the letter updates as you type. Highlighted text still needs your input. Nothing you type leaves your browser.</p>
+      </div>
+      <div class="builder">
+        <form class="panel" id="builder" autocomplete="on">
+          <div class="field">
+            <span class="lbl">Who are you writing to?</span>
+            <div class="seg" role="group" aria-label="Recipient type">
+              <button type="button" id="t-mep" data-type="mep" aria-pressed="true">MEP · English</button>
+              <button type="button" id="t-mdb" data-type="mdb" aria-pressed="false">MdB · Deutsch</button>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field" id="salutWrap" hidden>
+              <label for="f-salut">Anrede</label>
+              <select id="f-salut">
+                <option value="Sehr geehrte Frau">Frau</option>
+                <option value="Sehr geehrter Herr">Herr</option>
+                <option value="Guten Tag">Neutral</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-rname">Recipient’s name</label>
+              <input type="text" id="f-rname" placeholder="e.g. Dr. Anna Schmidt">
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="f-district">Your district</label>
+              <input type="text" id="f-district" placeholder="e.g. Neukölln" list="districts">
+              <datalist id="districts">
+                <option value="Mitte"><option value="Friedrichshain-Kreuzberg"><option value="Pankow"><option value="Charlottenburg-Wilmersdorf"><option value="Spandau"><option value="Steglitz-Zehlendorf"><option value="Tempelhof-Schöneberg"><option value="Neukölln"><option value="Treptow-Köpenick"><option value="Marzahn-Hellersdorf"><option value="Lichtenberg"><option value="Reinickendorf">
+              </datalist>
+            </div>
+            <div class="field" id="plzWrap" hidden>
+              <label for="f-plz">PLZ</label>
+              <input type="text" id="f-plz" inputmode="numeric" maxlength="5" placeholder="12043">
+            </div>
+          </div>
+          <div class="field">
+            <span class="lbl">Your status</span>
+            <div class="checks">
+              <label class="check"><input type="radio" name="status" id="s-cit" value="citizen" checked><span>I am a German citizen</span></label>
+              <label class="check"><input type="radio" name="status" id="s-res" value="resident"><span>I live and work in the district</span></label>
+            </div>
+            <span class="hint">Both matter to an elected office. Say which applies.</span>
+          </div>
+          <div class="field" id="asksWrap">
+            <span class="lbl">What will you ask for? <span class="muted" style="font-weight:400">(pick one or two)</span></span>
+            <div class="checks" id="asksMep">
+              <label class="check"><input type="checkbox" id="a1" value="raise the Supreme Court order in the INTA or DROI debate" checked><span>Raise the Supreme Court order in the INTA or DROI debate</span></label>
+              <label class="check"><input type="checkbox" id="a2" value="table the attached written question to the Commission"><span>Table the attached written question to the Commission</span></label>
+              <label class="check"><input type="checkbox" id="a3" value="support an urgency resolution if detentions continue"><span>Support an urgency resolution if detentions continue</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-personal">One sentence in your own words <span class="muted" style="font-weight:400">(recommended)</span></label>
+            <textarea id="f-personal" placeholder="Why does this matter to you personally? e.g. My family in Bihar was affected by the roll revision."></textarea>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="f-name">Your name</label>
+              <input type="text" id="f-name" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="f-email">Your email</label>
+              <input type="email" id="f-email" autocomplete="email">
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-addr">Your address in Berlin</label>
+            <input type="text" id="f-addr" autocomplete="street-address">
+          </div>
+          <div class="field">
+            <label for="f-to">Recipient’s email <span class="muted" style="font-weight:400">(optional, for the “Open in email” button)</span></label>
+            <input type="email" id="f-to" placeholder="firstname.lastname@europarl.europa.eu">
+          </div>
+          <button type="button" class="btn ghost small" id="clearForm">Clear my details</button>
+        </form>
+
+        <div class="letter" aria-live="polite">
+          <div class="bar-top">
+            <span class="eyebrow" id="letterLabel">Letter · English</span>
+            <button type="button" class="btn small" id="copyLetter">Copy letter</button>
+            <a class="btn ghost small" id="mailto" href="#">Open in email</a>
+          </div>
+          <pre id="letterOut"></pre>
+          <div style="padding:0 20px 16px"><p class="toast" id="letterToast" role="status"></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="step" id="questions">
+      <div class="step-head">
+        <p class="eyebrow"><b>Step 5</b> · Attach these</p>
+        <h2>Ready-to-submit questions and the briefing</h2>
+        <p class="muted">Send the questions with your letter. Staff can forward them as written.</p>
+      </div>
+      <div class="qtabs" role="tablist" aria-label="Question sets">
+        <button type="button" role="tab" id="tab-mdb" aria-selected="true" aria-controls="panel-mdb">For your MdB · 4 questions</button>
+        <button type="button" role="tab" id="tab-mep" aria-selected="false" aria-controls="panel-mep">For an MEP · question to the Commission</button>
+      </div>
+
+      <div id="panel-mdb" role="tabpanel" aria-labelledby="tab-mdb" class="qlist">
+        <p class="muted" style="font-size:.95rem">Schriftliche Fragen. Each is short and answerable. Your MdB can submit up to four a month.</p>
+        <div class="q"><div><p class="num">Frage 1</p><p lang="de">Hat die Bundesregierung die einstweilige Anordnung des Obersten Gerichtshofs Indiens vom 11. Oktober 2026 zum Schutz friedlicher Versammlungen gegenüber der indischen Regierung angesprochen, und wenn ja, in welchem Rahmen?</p><p class="gloss">Has the government raised the 11 October Supreme Court order with India, and in what forum?</p></div><button type="button" class="btn ghost small copyq">Copy</button></div>
+        <div class="q"><div><p class="num">Frage 2</p><p lang="de">Welche Erkenntnisse hat die Bundesregierung über die Zahl der seit dem 1. Oktober 2026 in Indien im Zusammenhang mit Protesten gegen die Überarbeitung der Wählerverzeichnisse festgenommenen Personen sowie über die Sperrung mobiler Internetdienste in Neu-Delhi?</p><p class="gloss">What does the government know about detentions since 1 October and the mobile internet shutdown in New Delhi?</p></div><button type="button" class="btn ghost small copyq">Copy</button></div>
+        <div class="q"><div><p class="num">Frage 3</p><p lang="de">Wird sich die Bundesregierung im Rat dafür einsetzen, dass die Unterzeichnung des Freihandelsabkommens zwischen der EU und Indien von einer öffentlichen Erklärung zur Versammlungsfreiheit und zum Wahlrecht begleitet wird?</p><p class="gloss">Will Germany push in the Council for a public statement on assembly and voting rights alongside FTA signature?</p></div><button type="button" class="btn ghost small copyq">Copy</button></div>
+        <div class="q"><div><p class="num">Frage 4</p><p lang="de">Wird die Bundesregierung darauf hinwirken, dass die Versammlungs- und Meinungsfreiheit in Indien im nächsten Menschenrechtsdialog der EU mit Indien thematisiert wird?</p><p class="gloss">Will the government push for these freedoms to be on the agenda of the next EU–India human rights dialogue?</p></div><button type="button" class="btn ghost small copyq">Copy</button></div>
+        <div><button type="button" class="btn small" id="copyAllMdb">Copy all four questions</button> <span class="toast" id="qToastMdb" role="status"></span></div>
+      </div>
+
+      <div id="panel-mep" role="tabpanel" aria-labelledby="tab-mep" class="qlist" hidden>
+        <p class="muted" style="font-size:.95rem">Parliamentary written questions are limited to 200 words and three sub-questions. This one fits.</p>
+        <div class="q" style="grid-template-columns:minmax(0,1fr)">
+          <div id="mepQ">
+            <p class="num">Subject: Freedom of assembly in India and the EU-India Free Trade Agreement</p>
+            <p>On 11 October 2026 the Supreme Court of India directed that people assembling peacefully must not be illegally detained. In the preceding days thousands of protesters were detained in New Delhi, and mobile internet was suspended around protest sites. The protests concern a revision of the voter rolls that critics say removed around 130 million names.</p>
+            <ol style="margin:10px 0 0;padding-left:1.3em;display:grid;gap:6px">
+              <li>Has the Commission, or the Vice-President/High Representative, raised these events with the Government of India?</li>
+              <li>How will freedom of assembly and the right to vote be addressed in the next EU-India Human Rights Dialogue?</li>
+              <li>Will the Commission address these concerns in the material it provides to Parliament for its consent to the EU-India Free Trade Agreement?</li>
+            </ol>
+          </div>
+          <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button type="button" class="btn small" id="copyMepQ">Copy question</button><span class="wordcount" id="wc"></span><span class="toast" id="qToastMep" role="status"></span></div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:12px">Two-page briefing for policy offices</h3>
+      <p class="prose">Send this with every letter. One clear, sourced briefing does more work than many emails, because staff can forward it inside their office. Copy the outline, fill in the brackets, keep it to two pages.</p>
+      <ol class="brief" id="briefList">
+        <li><span class="n">1</span><div><p class="de" lang="de">Kernaussage</p><p class="en">Three sentences: what is happening, why it concerns Germany and the EU, what you are asking for.</p></div></li>
+        <li><span class="n">2</span><div><p class="de" lang="de">Sachverhalt</p><p class="en">The Special Intensive Revision, the number of removals with source, the position of the Election Commission and the government.</p></div></li>
+        <li><span class="n">3</span><div><p class="de" lang="de">Reaktion des Staates</p><p class="en">Detentions, mobile internet shutdown, metro station closures. Each with date and source.</p></div></li>
+        <li><span class="n">4</span><div><p class="de" lang="de">Indische Rechtslage</p><p class="en">Art. 19(1)(b) and Art. 326 of the Indian Constitution, the Supreme Court interim order of 11 October 2026, Art. 21 and 25 ICCPR.</p></div></li>
+        <li><span class="n">5</span><div><p class="de" lang="de">Bezug zu Deutschland und der EU</p><p class="en">FTA consent procedure, EU–India human rights dialogue, German–Indian government consultations.</p></div></li>
+        <li><span class="n">6</span><div><p class="de" lang="de">Drei konkrete Bitten</p><p class="en">For example a written question, a mention in the committee debate, a public statement at signature.</p></div></li>
+        <li><span class="n">7</span><div><p class="de" lang="de">Quellen</p><p class="en">Verified, dated sources only. No social media posts without confirmation from media or courts.</p></div></li>
+      </ol>
+      <div><button type="button" class="btn small" id="copyBrief">Copy briefing outline (German)</button> <span class="toast" id="briefToast" role="status"></span></div>
+    </section>
+
+    <!-- 6 -->
+    <section class="step" id="send">
+      <div class="step-head">
+        <p class="eyebrow"><b>Step 6</b> · Send, follow up, grow</p>
+        <h2>Before you send</h2>
+        <p class="muted">Tick each one off. Your progress is saved in this browser only.</p>
+      </div>
+      <div class="checklist" id="preSend">
+        <label><input type="checkbox" id="c1"><span>Every fact checked against two sources, with a date.</span></label>
+        <label><input type="checkbox" id="c2"><span>Organisers in India consulted.</span></label>
+        <label><input type="checkbox" id="c3"><span>Ask anchored in Indian law and specific enough to act on.</span></label>
+        <label><input type="checkbox" id="c4"><span>Letter personalised, briefing attached.</span></label>
+        <label><input type="checkbox" id="c5"><span>Follow-up date in your calendar.</span></label>
+        <p class="ready" id="readyMsg" hidden>All five done. You’re ready to send.</p>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <p class="eyebrow">Follow up after 10 working days</p>
+          <div class="field">
+            <label for="f-sent">I sent my letter on</label>
+            <input type="text" id="f-sent" placeholder="YYYY-MM-DD">
+          </div>
+          <p>Follow up on <span class="datebox" id="followDate">—</span></p>
+          <p class="muted" style="font-size:.9rem">Send a short reminder that cites the date of your first message. Ask for 15 minutes at the MdB’s <span lang="de">Bürgersprechstunde</span>, ideally as a small group.</p>
+          <a class="btn small" id="calLink" href="#" target="_blank" rel="noopener">Add to Google Calendar ↗</a>
+        </div>
+        <div class="card">
+          <p class="eyebrow">Build a coalition</p>
+          <ul>
+            <li>Recruit German citizens of Indian origin and German friends. Their letters carry voting weight.</li>
+            <li>Approach <a href="https://www.reporter-ohne-grenzen.de/" target="_blank" rel="noopener">Reporter ohne Grenzen</a> (Berlin HQ), <a href="https://www.amnesty.de/" target="_blank" rel="noopener">Amnesty International Germany</a> and South Asian diaspora groups before going public. A co-signed letter gets a meeting faster.</li>
+            <li>Spread letters across districts (Mitte, Friedrichshain-Kreuzberg, Neukölln, Pankow and others) so several offices hear from their own residents.</li>
+            <li>Pitch the story with a local angle to taz, Tagesspiegel, Deutsche Welle.</li>
+            <li>Remember the second audience: actions in Berlin travel back to Indian social media. Keep messaging in the language of the Indian Constitution.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="margin-top:12px">Sources</h3>
+      <ul class="sources">
+        <li><time>11 Oct 2026</time><a href="https://monitor.civicus.org/explore/india-thousands-detained-in-crackdown-on-mass-protests-against-electoral-roll-manipulation-while-activists-and-journalists-are-criminalised/" target="_blank" rel="noopener">Civicus Monitor: thousands detained in crackdown on mass protests</a></li>
+        <li><time>10 Oct 2026</time><a href="https://www.aljazeera.com/news/2026/10/10/india-deploys-police-and-restricts-transport-ahead-of-mass-protest-in-delhi" target="_blank" rel="noopener">Al Jazeera: India deploys police and restricts transport ahead of mass protest</a></li>
+        <li><time>12 Oct 2026</time><a href="https://www.aljazeera.com/news/2026/10/12/india-opposition-plans-new-delhi-protest-to-demand-election-chief-resign" target="_blank" rel="noopener">Al Jazeera: opposition plans New Delhi protest</a></li>
+        <li><time>11 Oct 2026</time><a href="https://abcnews.com/International/wireStory/indias-cockroach-protest-movement-leaders-freed-detention-vow-137170034" target="_blank" rel="noopener">ABC News (AP): Cockroach movement leaders freed</a></li>
+        <li><time>12 Oct 2026</time><a href="https://www.democracynow.org/2026/10/12/cockroach_movement" target="_blank" rel="noopener">Democracy Now: the cockroach movement</a></li>
+        <li><time>—</time><a href="https://www.orfonline.org/expert-speak/the-india-eu-fta-from-political-agreement-to-ratification-and-coming-into-force" target="_blank" rel="noopener">Observer Research Foundation: EU ratification of the FTA</a></li>
+        <li><time>11 Sep 2026</time><span>European Commission proposal to the Council. Check the Commission’s <a href="https://policy.trade.ec.europa.eu/news_en" target="_blank" rel="noopener">trade newsroom</a> for the original.</span></li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Updated 14 October 2026. Facts move quickly: verify against the sources above before you send anything. This page stores nothing on a server; form entries and checklist ticks stay in your browser.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var store = {
+    get: function (k) { try { return localStorage.getItem("ag:" + k); } catch (e) { return null; } },
+    set: function (k, v) { try { localStorage.setItem("ag:" + k, v); } catch (e) {} },
+    del: function (k) { try { localStorage.removeItem("ag:" + k); } catch (e) {} }
+  };
+
+  function copyText(text, toastEl, msg) {
+    var done = function () { if (toastEl) { toastEl.textContent = msg || "Copied"; setTimeout(function () { toastEl.textContent = ""; }, 2200); } };
+    var fallback = function () {
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      var ok = false; try { ok = document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      if (ok) done(); else if (toastEl) toastEl.textContent = "Copy didn’t work here. Select the text and copy it manually.";
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback);
+      else fallback();
+    } catch (e) { fallback(); }
+  }
+
+  /* ---------- Letter builder ---------- */
+  var type = store.get("type") || "mep";
+  var fields = ["f-rname", "f-district", "f-plz", "f-personal", "f-name", "f-email", "f-addr", "f-to", "f-salut"];
+  fields.forEach(function (id) {
+    var v = store.get(id); if (v !== null) $(id).value = v;
+    $(id).addEventListener("input", function () { store.set(id, $(id).value); render(); });
+  });
+  var st = store.get("status"); if (st) { var r = document.querySelector('input[name="status"][value="' + st + '"]'); if (r) r.checked = true; }
+  document.querySelectorAll('input[name="status"]').forEach(function (r) { r.addEventListener("change", function () { store.set("status", r.value); render(); }); });
+  ["a1", "a2", "a3"].forEach(function (id) {
+    var v = store.get(id); if (v !== null) $(id).checked = v === "1";
+    $(id).addEventListener("change", function () { store.set(id, $(id).checked ? "1" : "0"); render(); });
+  });
+
+  function setType(t) {
+    type = t; store.set("type", t);
+    $("t-mep").setAttribute("aria-pressed", t === "mep");
+    $("t-mdb").setAttribute("aria-pressed", t === "mdb");
+    $("salutWrap").hidden = t !== "mdb";
+    $("plzWrap").hidden = t !== "mdb";
+    $("asksWrap").hidden = t !== "mep";
+    $("letterLabel").textContent = t === "mep" ? "Letter · English" : "Brief · Deutsch";
+    render();
+  }
+  $("t-mep").addEventListener("click", function () { setType("mep"); });
+  $("t-mdb").addEventListener("click", function () { setType("mdb"); });
+
+  function val(id) { return ($(id).value || "").trim(); }
+  function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function slot(v, ph) { return v ? esc(v) : "<mark>[" + esc(ph) + "]</mark>"; }
+  function plain(v, ph) { return v || "[" + ph + "]"; }
+
+  function build(fmt) {
+    var S = fmt === "html" ? slot : plain;
+    var citizen = (document.querySelector('input[name="status"]:checked') || {}).value === "citizen";
+    var personal = val("f-personal");
+    var sign = [S(val("f-name"), type === "mep" ? "Name" : "Name"), S(val("f-addr"), type === "mep" ? "address in Berlin" : "Adresse"), S(val("f-email"), "E-Mail")].join("\n");
+    if (type === "mep") {
+      var asks = ["a1", "a2", "a3"].filter(function (id) { return $(id).checked; }).map(function (id) { return $(id).value; });
+      var askLine = asks.length === 0 ? S("", "choose an ask") : asks.length === 1 ? asks[0] : asks.slice(0, -1).join(", ") + " or " + asks[asks.length - 1];
+      var subject = "Freedom of assembly in India and the EU-India Free Trade Agreement";
+      var body =
+        "Dear " + S(val("f-rname"), "Name") + ",\n\n" +
+        "I live in Berlin (" + S(val("f-district"), "district") + ")" + (citizen ? " and I am a German citizen" : ", where I live and work") +
+        ". I am writing about the crackdown on peaceful protest in India, ahead of Parliament’s consent vote on the EU-India Free Trade Agreement.\n\n" +
+        "On 11 October 2026 India’s Supreme Court ordered that peaceful protesters must not be illegally detained. In the days before, thousands were detained in New Delhi and mobile internet was cut around protest sites. I attach a two-page briefing with sources.\n\n" +
+        (personal ? (fmt === "html" ? esc(personal) : personal) + "\n\n" : "") +
+        "I would ask you to " + askLine + ".\n\n" +
+        "I would be glad to send further material or meet your office.\n\n" +
+        "Kind regards,\n\n" + sign;
+      return { subject: subject, body: body };
+    } else {
+      var subjectDe = "Schriftliche Fragen zur Versammlungsfreiheit in Indien";
+      var salut = val("f-salut") || "Sehr geehrte/r";
+      var bodyDe =
+        salut + " " + S(val("f-rname"), "Name") + ",\n\n" +
+        "ich wohne in Ihrem Wahlkreis (" + S(val("f-district"), "Bezirk") + ", " + S(val("f-plz"), "PLZ") + ")" +
+        (citizen ? " und bin deutsche Staatsbürgerin bzw. deutscher Staatsbürger" : " und lebe und arbeite hier") +
+        ". Ich schreibe Ihnen wegen des harten Vorgehens gegen friedliche Proteste in Indien.\n\n" +
+        "Am 11. Oktober 2026 hat der Oberste Gerichtshof Indiens angeordnet, dass friedlich Versammelte nicht rechtswidrig festgenommen werden dürfen. In den Tagen zuvor wurden in Neu-Delhi Tausende Menschen festgenommen, und das mobile Internet rund um die Protestorte wurde gesperrt. Eine zweiseitige Zusammenfassung mit Quellen liegt bei.\n\n" +
+        (personal ? (fmt === "html" ? esc(personal) : personal) + "\n\n" : "") +
+        "Ich bitte Sie, eine oder mehrere der beigefügten schriftlichen Fragen an die Bundesregierung zu richten. Gern stelle ich das Anliegen auch in Ihrer Bürgersprechstunde vor.\n\n" +
+        "Mit freundlichen Grüßen\n\n" + sign;
+      return { subject: subjectDe, body: bodyDe };
+    }
+  }
+
+  function render() {
+    var h = build("html");
+    $("letterOut").innerHTML = (type === "mep" ? "Subject: " : "Betreff: ") + esc(h.subject) + "\n\n" + h.body;
+    var p = build("text");
+    $("mailto").href = "mailto:" + encodeURIComponent(val("f-to")) + "?subject=" + encodeURIComponent(p.subject) + "&body=" + encodeURIComponent(p.body);
+  }
+
+  $("copyLetter").addEventListener("click", function () {
+    var p = build("text");
+    copyText((type === "mep" ? "Subject: " : "Betreff: ") + p.subject + "\n\n" + p.body, $("letterToast"), "Letter copied. Paste it into your email and attach the briefing.");
+  });
+  $("clearForm").addEventListener("click", function () {
+    fields.forEach(function (id) { if (id !== "f-salut") { $(id).value = ""; store.del(id); } });
+    render();
+  });
+
+  /* ---------- Questions ---------- */
+  function selectTab(which) {
+    $("tab-mdb").setAttribute("aria-selected", which === "mdb");
+    $("tab-mep").setAttribute("aria-selected", which === "mep");
+    $("panel-mdb").hidden = which !== "mdb";
+    $("panel-mep").hidden = which !== "mep";
+  }
+  $("tab-mdb").addEventListener("click", function () { selectTab("mdb"); });
+  $("tab-mep").addEventListener("click", function () { selectTab("mep"); });
+  document.querySelectorAll(".copyq").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var t = b.parentElement.querySelector('p[lang="de"]').textContent;
+      copyText(t, $("qToastMdb"), "Question copied");
+      b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1800);
+    });
+  });
+  $("copyAllMdb").addEventListener("click", function () {
+    var qs = Array.prototype.map.call(document.querySelectorAll('#panel-mdb .q p[lang="de"]'), function (p, i) { return (i + 1) + ". " + p.textContent; });
+    copyText(qs.join("\n\n"), $("qToastMdb"), "All four questions copied");
+  });
+  function mepQText() {
+    var el = $("mepQ");
+    var lines = [el.querySelector(".num").textContent, "", el.querySelector("p:not(.num)").textContent, ""];
+    el.querySelectorAll("li").forEach(function (li, i) { lines.push((i + 1) + ". " + li.textContent); });
+    return lines.join("\n");
+  }
+  var words = mepQText().replace(/^Subject:[^\n]*\n/, "").split(/\s+/).filter(Boolean).length;
+  $("wc").textContent = words + " / 200 words · 3 / 3 sub-questions";
+  $("copyMepQ").addEventListener("click", function () { copyText(mepQText(), $("qToastMep"), "Question copied"); });
+
+  $("copyBrief").addEventListener("click", function () {
+    var out = ["Titel: Indien: Massenstreichungen aus den Wählerverzeichnissen und Einschränkung der Versammlungsfreiheit", "Stand: [Datum]", ""];
+    var de = {
+      1: "Drei Sätze. Was geschieht, warum es Deutschland und die EU betrifft, worum Sie bitten.",
+      2: "Die Sonderüberprüfung der Wählerverzeichnisse (Special Intensive Revision), die Zahl der Streichungen mit Quelle, die Position der Wahlkommission und der Regierung.",
+      3: "Festnahmen, Sperrung des mobilen Internets, Schließung von Metrostationen. Jeweils mit Datum und Quelle.",
+      4: "Art. 19(1)(b) und Art. 326 der indischen Verfassung, die einstweilige Anordnung des Obersten Gerichtshofs vom 11. Oktober 2026, Art. 21 und 25 des Internationalen Pakts über bürgerliche und politische Rechte.",
+      5: "Zustimmungsverfahren zum Freihandelsabkommen, Menschenrechtsdialog der EU mit Indien, deutsch-indische Regierungskonsultationen.",
+      6: "Zum Beispiel eine schriftliche Frage, eine Erwähnung in der Ausschussdebatte, eine öffentliche Erklärung zur Unterzeichnung.",
+      7: "Nur geprüfte Quellen mit Datum. Keine Social-Media-Beiträge ohne Bestätigung durch Medien oder Gerichte."
+    };
+    document.querySelectorAll("#briefList li").forEach(function (li, i) {
+      out.push((i + 1) + ". " + li.querySelector(".de").textContent + ": " + de[i + 1]);
+    });
+    copyText(out.join("\n"), $("briefToast"), "Briefing outline copied");
+  });
+
+  /* ---------- Checklist + progress ---------- */
+  var boxes = ["c1", "c2", "c3", "c4", "c5"];
+  function updateProgress() {
+    var n = boxes.filter(function (id) { return $(id).checked; }).length;
+    $("progressText").textContent = "Pre-send checklist: " + n + " of 5";
+    $("progressBar").style.width = (n * 20) + "%";
+    $("readyMsg").hidden = n !== 5;
+  }
+  boxes.forEach(function (id) {
+    if (store.get(id) === "1") $(id).checked = true;
+    $(id).addEventListener("change", function () { store.set(id, $(id).checked ? "1" : "0"); updateProgress(); });
+  });
+
+  /* ---------- Follow-up date (10 working days) ---------- */
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function iso(d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addWorkdays(d, n) { var x = new Date(d); while (n > 0) { x.setDate(x.getDate() + 1); var w = x.getDay(); if (w !== 0 && w !== 6) n--; } return x; }
+  function updateFollow() {
+    var raw = val("f-sent"); var m = raw.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    var base = m ? new Date(+m[1], +m[2] - 1, +m[3]) : new Date();
+    var f = addWorkdays(base, 10);
+    $("followDate").textContent = f.toLocaleDateString(undefined, { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+    var ymd = iso(f).replace(/-/g, ""); var next = iso(new Date(f.getFullYear(), f.getMonth(), f.getDate() + 1)).replace(/-/g, "");
+    var details = "Send a short reminder citing the date of your first letter (" + iso(base) + "). Ask for 15 minutes at the Bürgersprechstunde, ideally as a small group.";
+    $("calLink").href = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent("Follow up: India advocacy letter") + "&dates=" + ymd + "/" + next + "&details=" + encodeURIComponent(details);
+  }
+  var sent = store.get("f-sent"); $("f-sent").value = sent || iso(new Date());
+  $("f-sent").addEventListener("input", function () { store.set("f-sent", $("f-sent").value); updateFollow(); });
+  $("calLink").addEventListener("click", function () { if (!$("c5").checked) { $("c5").checked = true; store.set("c5", "1"); updateProgress(); } });
+
+  /* ---------- Rail highlight ---------- */
+  var links = Array.prototype.slice.call(document.querySelectorAll("#railList a"));
+  var secs = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
+  function onScroll() {
+    var y = window.scrollY + window.innerHeight * 0.3, idx = 0;
+    secs.forEach(function (s, i) { if (s.offsetTop <= y) idx = i; });
+    links.forEach(function (a, i) { a.classList.toggle("active", i === idx); a.classList.toggle("done", i < idx); });
+    var act = links[idx]; if (act && act.scrollIntoView && window.innerWidth <= 960) { var ol = $("railList"); ol.scrollLeft = act.offsetLeft - 16; }
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  setType(type);
+  updateProgress();
+  updateFollow();
+  onScroll();
+})();
+</script>
+</body>
+</html>
